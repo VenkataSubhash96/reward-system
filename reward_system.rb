@@ -10,12 +10,16 @@ require './score_calculator'
 require 'logger'
 
 get '/' do
-  'Hola! This is just a dummy URL.'
+  'Hola! This is just a dummy URL. <br /><br />Go to "/upload" to upload the input file and get scores'
+end
+
+get '/upload' do
+  erb :upload_form
 end
 
 get '/scores' do
   content_type :json
-  input_file = params[:file][:tempfile]
+  input_file = params[:file]
   company = FileProcessor.new(input_file).process
   company.final_scores.to_json
 end

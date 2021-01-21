@@ -25,8 +25,8 @@ class RowProcessor
 
   def invite_customer
     customer = company.find_customer(customer_name)
-    company.invite_customer(nil, customer_name) if customer.nil?
-    company.invite_customer(customer_name, invitee_name)
+    company.invite_customer(customer_name) if customer.nil?
+    company.invite_customer(invitee_name, customer_name)
   end
 
   def accept_invitation

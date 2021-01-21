@@ -7,7 +7,7 @@ class Company
     @customers = []
   end
 
-  def invite_customer(referrer, name)
+  def invite_customer(name, referrer = nil)
     logger.error("Customer already invited - #{name}") && return if customer_already_invited?(name)
 
     customer = Customer.new(name, referrer)
