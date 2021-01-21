@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-require_relative 'env'
 require './file_processor'
 require './row_processor'
 require './company'
