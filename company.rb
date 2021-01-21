@@ -7,7 +7,7 @@ class Company
     @customers = []
   end
 
-  def invite_customer(referrer, name)
+  def invite_customer(name, referrer = nil)
     logger.error("Customer already invited - #{name}") && return if customer_already_invited?(name)
 
     customer = Customer.new(name, referrer)
@@ -21,10 +21,12 @@ class Company
 
   def final_scores
     customers.map do |customer|
+      next if customer.score.zero?
+
       {
         customer.name => customer.score
       }
-    end.inject(:merge)
+    end.compact.inject(:merge)
   end
 
   private
