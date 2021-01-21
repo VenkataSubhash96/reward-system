@@ -21,10 +21,12 @@ class Company
 
   def final_scores
     customers.map do |customer|
+      next if customer.score.zero?
+
       {
         customer.name => customer.score
       }
-    end.inject(:merge)
+    end.compact.inject(:merge)
   end
 
   private
