@@ -16,7 +16,10 @@ class RowProcessor
   end
 
   def process
-    log_error(invalid_action_error) && return unless action_whitelisted?
+    unless action_whitelisted?
+      log_error(invalid_action_error)
+      return
+    end
 
     recommend_action? ? invite_customer : accept_invitation
   end
@@ -46,7 +49,7 @@ class RowProcessor
   end
 
   def invalid_action_error
-    "Invalid action - #{action}"
+    'Invalid row'
   end
 
   def unknown_customer_error
