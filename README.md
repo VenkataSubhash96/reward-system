@@ -12,7 +12,7 @@ Table of Contents
 
 ## Documentation
 
-* This API has two GET methods - `/upload` and `scores`
+* This API has two GET methods - `/upload` and `/scores`
 * `/upload` - This renders a form to upload the input file.
 * `/scores` - This accepts a file and returns scores for customers in the company.
 
