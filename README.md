@@ -7,6 +7,8 @@ Table of Contents
 * [Documentation](#documentation)
 * [Setting up development environment](#setting-up-development-environment)
   * [Prerequisites](#prerequisites)
+* [Running the application](#running-the-application)
+  * [Running in local](#running-in-local)
 * [Running tests](#running-tests)
 * [Process Decisions](#process-decisions)
 
@@ -35,6 +37,14 @@ The output for this case would be:
 * Install **ruby 2.7.2**: `rbenv install 2.7.2`
 * Set **ruby 2.7.2** as local version in the project directory: `rbenv local 2.7.2`
 * Run `bundle install` to install the gems
+
+## Running the application
+
+### Running in local
+
+* Run `ruby reward_system.rb` - This will start a HTTP server on the port 4567
+* Go to `http://localhost:4567/` to view the root page.
+* Go to `http://localhost:4567/upload` to get the form for uploading the input file.
 
 ## Running tests
 
