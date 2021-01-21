@@ -9,6 +9,7 @@ Table of Contents
   * [Prerequisites](#prerequisites)
 * [Running the application](#running-the-application)
   * [Running in local](#running-in-local)
+  * [Using curl command](#using-curl-command)
 * [Running tests](#running-tests)
 * [Process Decisions](#process-decisions)
 
@@ -45,6 +46,15 @@ The output for this case would be:
 * Run `ruby reward_system.rb` - This will start a HTTP server on the port 4567
 * Go to `http://localhost:4567/` to view the root page.
 * Go to `http://localhost:4567/upload` to get the form for uploading the input file.
+
+### Using curl command
+
+* Run `ruby reward_system.rb` - This will start a HTTP server on the port 4567
+* Make sure you have your input file in the root directory named as `sample_input`
+* Run the following curl command to get the scores
+```
+curl -XGET -H "Content-type: application/json" 'http://localhost:4567/scores?file=sample_input'
+```
 
 ## Running tests
 
