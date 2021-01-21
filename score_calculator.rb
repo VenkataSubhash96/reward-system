@@ -9,7 +9,7 @@ class ScoreCalculator
   end
 
   def process
-    return if customer.referrer.nil?
+    return 0.0 if customer.referrer.nil?
 
     0.step do |level|
       customer_referrer = customer.referrer

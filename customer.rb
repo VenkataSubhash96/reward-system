@@ -4,7 +4,7 @@ class Customer
   attr_accessor :name, :referrer, :score
   attr_reader :invitation_accepted
 
-  def initialize(name, referrer)
+  def initialize(name, referrer:)
     @name = name
     @referrer = referrer
     @invitation_accepted = false
